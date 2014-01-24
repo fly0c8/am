@@ -16,8 +16,8 @@ class CreateShopsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('name');
-			/*
 			$table->string('tagline');
+			/*
 			$table->string('tags');
 			$table->longtext('content')->nullable();
 			$table->string('street');

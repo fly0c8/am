@@ -33,9 +33,21 @@ class CategorySeeder extends Seeder {
 class ShopSeeder extends Seeder {
 	public function run() {
 		DB::Table('shops')->delete();
-		Shop::create(array('id' => 1, 'name' => 'shop1'));
-		Shop::create(array('id' => 2, 'name' => 'shop2'));
-		Shop::create(array('id' => 3, 'name' => 'shop3'));		
+		Shop::create(array(
+			'id' => 1, 
+			'name' => 'shop1',
+			'tagline' => 'a pretty nifty shop1'
+		));
+		Shop::create(array(
+			'id' => 2, 
+			'name' => 'shop2',
+			'tagline' => 'a pretty nifty shop2'
+		));
+		Shop::create(array(
+			'id' => 3, 
+			'name' => 'shop3',
+			'tagline' => 'a pretty nifty shop3'
+		));
 	}
 }
 class ShopCategorySeeder extends Seeder {
