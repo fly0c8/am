@@ -13,8 +13,38 @@ class DatabaseSeeder extends Seeder {
 		$this->call('CategorySeeder');
 		$this->call('ShopSeeder');
 		$this->call('ShopCategorySeeder');
+		$this->call('UserSeeder');
 	}
 
+}
+class UserSeeder extends Seeder {
+	public function run() {
+		DB::Table('users')->delete();
+		User::create(
+			array(
+				'id' => 1, 
+				'email' => 'arnold.angerer@gmail.com',
+				'password' => Hash::make('jj'),
+				'role' => 'sysadmin'
+			)
+		);
+		User::create(
+			array(
+				'id' => 2, 
+				'email' => 'shopadmin@gmail.com',
+				'password' => Hash::make('jj'),				
+				'role' => 'shopadmin'
+			)
+		);
+		User::create(
+			array(
+				'id' => 3, 
+				'email' => 'guest@gmail.com',
+				'password' => Hash::make('jj'),				
+				'role' => 'guest'
+			)
+		);		
+	}
 }
 class CategorySeeder extends Seeder {
 	public function run() {
